@@ -2,13 +2,13 @@
 
 using namespace std;
 // global variables 'x' and 'y'
-unsigned long int x;
-int y;
-signed long int arr[5];
+float x;
+unsigned char y;
+double arr[5];
 string separator = "====================================================================\n";
 void testFunction();
 void testArray();
-int  sum(unsigned long int* px, int* py);
+int  sum(float* px, unsigned char* py);
 
 int main()
 {
@@ -34,11 +34,11 @@ int main()
 // Function using global variables
 void testFunction()
 {
-	cout << separator << "Enter the first number: ";
+	cout << separator << "Enter a number: ";
 	cin >> x;
-	cout << "Enter the second number: "; 
+	cout << "Enter a symbol: "; 
 	cin >> y;
-	int result = sum(&x, &y);
+	signed int result = sum(&x, &y);
 	cout << "\nResult is " << (double)result << "\n";
 	cout << "Memory occupation: " << sizeof(result) << " byte\n";
 	cout << "\nConvert to the new data type (double):\n";
@@ -46,7 +46,7 @@ void testFunction()
 }
 
 // Function using pointers
-int sum(unsigned long int* px, int* py)
+int sum(float* px, unsigned char* py)
 {
 	int c;
 	c = (*px) + (*py);
@@ -62,11 +62,12 @@ void testArray()
 		cout << i << ") ";
 		cin >> arr[i];
 	}
-	signed long int min = 2147483647;															//
+	int min = trunc(arr[0]);
+	// Calculation of the smallest integer part of an element
 	for (int i = 0; i < 5; i++)
 	{
-		if (arr[i] < min)
-			min = arr[i];
+		if (trunc(arr[i]) < min)
+			min = trunc(arr[i]);
 	}
 	cout << "\nThe minimum element of the array is " << min << "\n" << separator;
 }
