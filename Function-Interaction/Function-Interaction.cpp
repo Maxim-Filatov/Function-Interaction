@@ -5,7 +5,7 @@ using namespace std;
 float x;
 unsigned char y;
 double arr[5];
-string separator = "====================================================================\n";
+string separator = "=================================================\n";
 void testFunction();
 void testArray();
 int  sum(float* px, unsigned char* py);
@@ -39,7 +39,7 @@ void testFunction()
 	cout << "Enter a symbol: "; 
 	cin >> y;
 	signed int result = sum(&x, &y);
-	cout << "\nResult is " << (double)result << "\n";
+	cout << "\nResult is " << (signed int)result << "\n";
 	cout << "Memory occupation: " << sizeof(result) << " byte\n";
 	cout << "\nConvert to the new data type (double):\n";
 	cout << "New memory occupation:  " << sizeof((double)(result)) << " byte\n" << separator;
