@@ -8,7 +8,7 @@ double arr[5];
 string separator = "=================================================\n";
 void testFunction();
 void testArray();
-int  sum(float* px, unsigned char* py);
+float sum(float* px, unsigned char* py);
 
 int main()
 {
@@ -38,19 +38,17 @@ void testFunction()
 	cin >> x;
 	cout << "Enter a symbol: "; 
 	cin >> y;
-	signed int result = sum(&x, &y);
-	cout << "\nResult is " << (signed int)result << "\n";
+	float result = sum(&x, &y);
+	cout << "\nResult is " << result << "\n";
 	cout << "Memory occupation: " << sizeof(result) << " byte\n";
-	cout << "\nConvert to the new data type (double):\n";
-	cout << "New memory occupation:  " << sizeof((double)(result)) << " byte\n" << separator;
+	cout << "\nConvert to the new data type (signed int):\n";
+	cout << "New memory occupation: " << sizeof((signed int)(result)) << " byte\n" << separator;
 }
 
 // Function using pointers
-int sum(float* px, unsigned char* py)
+float sum(float* px, unsigned char* py)
 {
-	int c;
-	c = (*px) + (*py);
-	return c;
+	return (*px) + (*py);
 }
 
 // Function for initializing an array and finding the minimum element
@@ -64,7 +62,7 @@ void testArray()
 	}
 	int min = trunc(arr[0]);
 	// Calculation of the smallest integer part of an element
-	for (int i = 0; i < 5; i++)
+	for (int i = 1; i < 5; i++)
 	{
 		if (trunc(arr[i]) < min)
 			min = trunc(arr[i]);
