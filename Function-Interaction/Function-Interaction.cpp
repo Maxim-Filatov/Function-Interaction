@@ -25,7 +25,7 @@ int main()
 			case 2: testArray(); break;
 			case 3: action = false; break;
 			default:
-				cout << "Enter the number (1, 2 or 3):\n" << "You entered: ";
+				cout << "\nEnter the number (1, 2 or 3):\n";
 				break;
 		}
 	}
@@ -67,5 +67,5 @@ void testArray()
 		if (trunc(arr[i]) < min)
 			min = trunc(arr[i]);
 	}
-	cout << "\nThe minimum element of the array is " << min << "\n" << separator;
+	cout << "\nThe smallest integer part of an element of the array is " << min << "\n" << separator;
 }
