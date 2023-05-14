@@ -51,13 +51,13 @@ float sum(float* px, unsigned char* py)
 	return (*px) + (*py);
 }
 
-// Function for initializing an array and finding the minimum element
+// Function for initializing an array and finding the smallest integer part of an element
 void testArray()
 {
 	cout << separator << "Enter the elements of the array:\n";
 	for (int i = 0; i < 5; i++)
 	{
-		cout << i << ") ";
+		cout << "arr[" << i << "] = ";
 		cin >> arr[i];
 	}
 	int min = trunc(arr[0]);
